@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: [
+      'chocolate-absent-scorpion-77.mypinata.cloud',
+      'gateway.pinata.cloud',
+      'ipfs.io'
+    ],
+  },
 };
 
 export default nextConfig;
