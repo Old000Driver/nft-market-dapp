@@ -24,22 +24,16 @@ export function BuyNFT({ nft, onBuyNFT }: BuyNFTProps) {
 
     try {
       console.log("提交购买交易...");
-      const result = await writeContractAsync({
+      const tx = await writeContractAsync({
         address: process.env.NEXT_PUBLIC_MARKET_CONTRACT_ADDRESS as `0x${string}`,
         abi: NFTMarketABI,
         functionName: "buyNFT",
         args: [nft.nftContract, BigInt(nft.tokenId)],
       });
 
-      console.log("writeContractAsync 返回值:", result);
-      if (typeof result === "string") {
-        setTxHash(result as `0x${string}`);
-      } else if (result.hash) {
-        setTxHash(result.hash);
-      } else {
-        throw new Error("无法获取交易哈希");
-      }
-
+      console.log("writeContractAsync 返回值:", tx);
+      // 直接设置交易哈希，因为 writeContractAsync 返回的就是哈希
+      setTxHash(tx as `0x${string}`);
       toast.success("交易已提交");
     } catch (error) {
       console.error("购买失败:", error);

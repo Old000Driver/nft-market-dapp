@@ -22,22 +22,15 @@ export function DelistNFT({ nft, onDelist }: DelistNFTProps) {
 
     try {
       console.log("提交取消上架交易...");
-      const result = await writeContractAsync({
+      const hash = await writeContractAsync({
         address: process.env.NEXT_PUBLIC_MARKET_CONTRACT_ADDRESS as `0x${string}`,
         abi: NFTMarketABI,
         functionName: "delistNFT",
         args: [nft.nftContract, BigInt(nft.tokenId)],
       });
 
-      console.log("writeContractAsync 返回值:", result);
-      if (typeof result === "string") {
-        setTxHash(result as `0x${string}`);
-      } else if (result.hash) {
-        setTxHash(result.hash);
-      } else {
-        throw new Error("无法获取交易哈希");
-      }
-
+      console.log("交易哈希:", hash);
+      setTxHash(hash as `0x${string}`);
       toast.success("交易已提交");
     } catch (error) {
       console.error("取消上架失败:", error);

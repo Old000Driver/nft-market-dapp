@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { NFTCard } from "./nft-card";
 import { ListNFT } from "./list-nft";
 import { fetchAllListings, type ListingNFT } from "@/utils/fetchListings";
+import { toast } from "sonner";
 
 export default function NFTMarketplace() {
   const [nftList, setNftList] = useState<ListingNFT[]>([]);
@@ -52,7 +53,7 @@ export default function NFTMarketplace() {
         <div></div>
         <ListNFT onSuccess={refreshNFTs} />
       </div>
-      {isLoading && <p className="text-center">加载中...</p>}
+      {isLoading && nftList.length === 0 && <p className="text-center">加载中...</p>}
       {error && <p className="text-center text-red-500">{error}</p>}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {nftList.map((nft: ListingNFT) => (
