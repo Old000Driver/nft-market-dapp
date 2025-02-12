@@ -46,7 +46,7 @@ export const fetchAllListings = async (): Promise<ListingNFT[]> => {
       items.map(async (item, index) => {
         try {
           const tokenURI = (await client.readContract({
-            address: item.nftContract,
+            address: item.nftContract as `0x${string}`,
             abi: NFT_ABI,
             functionName: "tokenURI",
             args: [item.tokenId],
