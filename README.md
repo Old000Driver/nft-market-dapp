@@ -24,7 +24,7 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 这是一个基于 Next.js 的去中心化应用程序 (DApp)，用于 NFT 市场的开发。
 
-暂只实现核心功能-上架-购买-下架；Solidity 源码在另一个分支
+暂只实现核心功能-上架-购买-下架；Solidity 源码在 Solidity-contract 分支
 
 ![image](https://github.com/user-attachments/assets/a03e9e87-edc8-41f0-b9d4-92723ee2dd89)
 
