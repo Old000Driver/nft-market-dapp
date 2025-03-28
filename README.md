@@ -20,14 +20,13 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+# NFT Market DApp
 
-To learn more about Next.js, take a look at the following resources:
+这是一个基于 Next.js 的去中心化应用程序 (DApp)，用于 NFT 市场的开发。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+暂只实现核心功能-上架-购买-下架
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+![image](https://github.com/user-attachments/assets/a03e9e87-edc8-41f0-b9d4-92723ee2dd89)
 
 ## Deploy on Vercel
 
